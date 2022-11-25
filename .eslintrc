@@ -11,11 +11,12 @@
     "@vue/typescript/recommended",
     // Add under other rules
     "@vue/prettier",
-    "@vue/prettier/@typescript-eslint"
+    // "@vue/prettier/@typescript-eslint"
+    "@vue/eslint-config-typescript"
   ],
   "parserOptions": {
     "ecmaVersion": 2022
   },
   "plugins": [],
-  "rules": {}
+  "rules": { "no-unused-vars": "off" }
 }

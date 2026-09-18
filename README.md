@@ -1,42 +1,74 @@
-# Nuxt 3 Minimal Starter
+# Baby Name Generator
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A small Nuxt 3 app that suggests baby names filtered by gender, popularity, and name length. Pick the three options, get the matching names, and drop the ones you do not like.
 
-## Setup
+> Learning project from 2022. It is finished in the sense that it works, but it is not maintained.
 
-Make sure to install the dependencies:
+## What it does
+
+- Filters a local name list by gender, popularity, and length.
+- Renders the matches as cards.
+- Lets a name be removed from the current result set.
+
+## Tech stack
+
+- Nuxt 3 and Vue 3
+- TypeScript
+- Sass
+- ESLint, Prettier, and Stylelint with a Husky pre-commit hook
+
+## Getting started
+
+### Requirements
+
+- Node.js
+- yarn or npm
+
+### Installation
 
 ```bash
-# yarn
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
+### Development
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-## Production
+The development server runs at `http://localhost:3000`.
 
-Build the application for production:
+## Useful commands
 
 ```bash
-npm run build
+yarn build         # Build for production
+yarn generate      # Build a static output
+yarn preview       # Preview the production build
+yarn lint:script   # Lint the scripts
+yarn lint:style    # Lint the styles
 ```
 
-Locally preview production build:
+## How it works
 
-```bash
-npm run preview
+The name data and the `Gender`, `Popularity`, and `Length` enums live in `data`. Selection state is a single reactive object, and the filtered result is recomputed whenever one of the three options changes. There is no backend and no persistence — a reload resets everything.
+
+## Project structure
+
+```text
+components/
+├── Option.vue     # One filter group
+└── Card/Name.vue  # A single name card
+
+data/              # Name list and option enums
+app.vue            # Filter state and result computation
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Status
+
+Unmaintained. The dependency versions are from 2022 and are not kept current.
+
+## License
+
+No open-source license has been declared yet. Until a license is added, reuse and redistribution are not granted by default.
+
+Made with love by [Laflamme](https://github.com/lafllamme).
